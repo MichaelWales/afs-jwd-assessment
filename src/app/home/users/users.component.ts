@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as Data from './assets/mock_data_(5).json';
+import * as data from '../../../assets/mock_data_(5).json';
 
 @Component({
   selector: 'app-users',
@@ -7,18 +7,12 @@ import * as Data from './assets/mock_data_(5).json';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-
-  // userData: {
-  //   first_name:String,
-  //   last_name: String,
-  //   favourite_movie: String,
-  //   likes_popcorn: Boolean,
-  //   gender: String
-  // }[] = Data;
+  listData = data;
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.listData);
   }
 
 }

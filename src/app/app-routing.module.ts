@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './home/users/users.component';
 import { EmployeesComponent } from './home/employees/employees.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -11,11 +12,13 @@ const routes: Routes = [
     children: [
         {
           path: 'users',
-          component: UsersComponent
+          component: UsersComponent,
+          canActivate: [AuthGuard]
         },
         {
           path: 'employees',
-          component: EmployeesComponent
+          component: EmployeesComponent,
+          canActivate: [AuthGuard]
         }
     ]
   },
